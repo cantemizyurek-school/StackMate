@@ -4,7 +4,7 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 
 ## Installation
 
-`npm install stack-mate`
+`npm install stackedmate`
 
 ## Data Structures
 
