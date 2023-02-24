@@ -4,11 +4,13 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 
 ## Installation
 
-`npm install stack-mate`
+`npm install stackedmate`
 
 ## Data Structures
 
 - Linked List - a data structure that consists of a sequence of nodes, each containing a reference to the next node in the sequence.
+- Queue - First-In-First-Out (FIFO) structure that allows you to store and retrieve elements in a specific order.
+- Stack - Last-In-First-Out (LIFO) structure that allows you to store and retrieve elements in a specific order.
 
 ## Features
 
@@ -78,4 +80,31 @@ queue.enqueue(3);
 queue.dequeue(); // 1
 queue.dequeue(); // 2
 queue.dequeue(); // 3
+```
+
+### Stack
+
+- add - adds an element to the top of the stack
+- remove - removes an element from the top of the stack
+- peek - returns the element at the top of the stack
+- length - returns the number of elements in the stack
+- isEmpty - returns true if the stack is empty, false otherwise
+- clear - removes all elements from the stack
+- toArray - returns an array containing the elements in the stack
+- toString - returns a string containing the elements in the stack
+
+#### Example
+
+```javascript
+import { Stack } from "stack-mate";
+
+const stack = new Stack();
+
+stack.add(1);
+stack.add(2);
+stack.add(3);
+
+stack.remove(); // 3
+stack.remove(); // 2
+stack.remove(); // 1
 ```
