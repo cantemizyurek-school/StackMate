@@ -142,7 +142,3 @@ heap.remove(); // 4
 heap.remove(); // 5
 heap.remove(); // 7
 ```
-
-```
-
-```
