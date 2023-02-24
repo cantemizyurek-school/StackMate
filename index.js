@@ -5,6 +5,7 @@ import Stack from "./src/Stack.js";
 import BinaryHeap from "./src/BinaryHeap.js";
 import BinaryMinHeap from "./src/BinaryMinHeap.js";
 import BinaryMaxHeap from "./src/BinaryMaxHeap.js";
+import Tree from "./src/Tree.js";
 
 export {
   SinglyLinkedList,
@@ -14,4 +15,5 @@ export {
   BinaryHeap,
   BinaryMinHeap,
   BinaryMaxHeap,
+  Tree,
 };

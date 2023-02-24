@@ -1,14 +1,18 @@
-export default function BinaryHeap(
-  List,
-  scoreFunction = baseScoreFunction,
-  compareFunction = baseCompareFunction
-) {
+export default function BinaryHeap(List, scoreFunction, compareFunction) {
   var heap = [];
 
   if (List) {
     for (var i = 0; i < List.length; i++) {
       add(List[i]);
     }
+  }
+
+  if (!scoreFunction) {
+    scoreFunction = baseScoreFunction;
+  }
+
+  if (!compareFunction) {
+    compareFunction = baseCompareFunction;
   }
 
   return Object.freeze({
