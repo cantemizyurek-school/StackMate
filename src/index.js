@@ -1,3 +1,3 @@
-import SingleyLinkedList from "./SingleyLinkedList";
+import SinglyLinkedList from "./SinglyLinkedList";
 
-export default { SingleyLinkedList };
+export default { SinglyLinkedList };

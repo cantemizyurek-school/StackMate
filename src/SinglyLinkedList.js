@@ -1,4 +1,4 @@
-export default function SingleyLinkedList(list) {
+export default function SinglyLinkedList(list) {
   var head = null;
   var tail = null;
   var length = 0;
