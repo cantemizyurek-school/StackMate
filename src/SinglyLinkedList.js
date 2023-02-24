@@ -108,7 +108,7 @@ export default function SinglyLinkedList(list) {
     index = getNegativeIndex(index);
 
     var current = head;
-    for (var i = 0; i < index; i++) {
+    for (let i = 0; i < index; i++) {
       current = current.next;
     }
 
@@ -209,7 +209,7 @@ export default function SinglyLinkedList(list) {
 
     var list = SingleyLinkedList();
     var current = getNode(start);
-    for (var i = start; i < end; i++) {
+    for (let i = start; i < end; i++) {
       list.push(current.data);
       current = current.next;
     }
@@ -218,7 +218,7 @@ export default function SinglyLinkedList(list) {
 
   function concat(list) {
     if (Array.isArray(list)) {
-      for (var i = 0; i < list.length; i++) {
+      for (let i = 0; i < list.length; i++) {
         push(list[i]);
       }
 
