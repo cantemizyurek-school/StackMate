@@ -1,6 +1,6 @@
-# Stack Mate - A Data Structures Library
+# Stacked Mate - A Data Structures Library
 
-Stack Mate is a lightweight and easy-to-use data structures library that provides several commonly used data structures for use in your projects.
+Stacked Mate is a lightweight and easy-to-use data structures library that provides several commonly used data structures for use in your projects.
 
 ## Installation
 

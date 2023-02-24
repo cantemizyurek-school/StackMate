@@ -1,7 +1,7 @@
 {
-  "name": "stack-mate",
-  "version": "1.0.0",
-  "description": "stackmates is a simple data structures libary in javascript",
+  "name": "stackedmate",
+  "version": "0.0.1",
+  "description": "stacked mate is a simple data structures libary in javascript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
