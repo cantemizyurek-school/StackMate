@@ -1,7 +1,7 @@
 {
-  "name": "stackmate",
+  "name": "stack-mate",
   "version": "1.0.0",
-  "description": "",
+  "description": "stackmates is a simple data structures libary in javascript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +11,8 @@
     "url": "git+https://github.com/cantemizyurek-school/StackMate.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Can Temizyurek",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cantemizyurek-school/StackMate/issues"
   },
