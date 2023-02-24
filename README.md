@@ -178,3 +178,58 @@ var node4 = tree.add(4, node2);
 // 2
 // 3 4
 ```
+
+### Binary Search Tree
+
+- add - adds a node to the tree
+- remove - removes a node from the tree
+- contains - returns true if the tree contains the specified node, false otherwise
+- get - returns the node with the specified value
+- getMin - returns the node with the minimum value
+- getMax - returns the node with the maximum value
+- getDepth - returns the depth of the specified node
+- root - returns the root node of the tree
+- traverseBreadthFirst - traverses the tree in breadth-first order
+- traverseDepthFirst - traverses the tree in depth-first order (pre-order, post-order)
+- toArray - returns an array containing the values of the nodes in the tree
+- toString - returns a string containing the values of the nodes in the tree
+
+#### Example
+
+```javascript
+import { BinarySearchTree } from "stack-mate";
+
+const tree = new BinarySearchTree();
+
+tree.add(1);
+tree.add(2);
+tree.add(3);
+tree.add(4);
+
+tree.remove(2);
+
+tree.contains(2); // false
+tree.contains(3); // true
+
+tree.get(3); // 3
+
+tree.getMin(); // 1
+tree.getMax(); // 4
+
+tree.getDepth(); // 2
+
+tree.traverseBreadthFirst((node) => console.log(node.value));
+// 1
+// 3
+// 4
+
+tree.traverseDepthFirst((node) => console.log(node.value), "pre-order");
+// 1
+// 3
+// 4
+
+tree.traverseDepthFirst((node) => console.log(node.value), "post-order");
+// 4
+// 3
+// 1
+```
