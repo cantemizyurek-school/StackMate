@@ -13,6 +13,7 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 - Stack - Last-In-First-Out (LIFO) structure that allows you to store and retrieve elements in a specific order.
 - BinartHeap - a data structure that allows you to store elements in a specific order. The order is determined by the priority of the elements.
 - Tree - a data structure that consists of a sequence of nodes, each containing a reference to the parent node and the child nodes.
+- Binary Search Tree - a data structure that consists of a sequence of nodes, each containing a reference to the parent node and the child nodes. The nodes are ordered in a specific way.
 
 ## Features
 
