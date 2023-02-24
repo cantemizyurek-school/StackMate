@@ -27,6 +27,8 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 - insert - inserts a node at the specified index
 - remove - removes a node at the specified index
 - reverse - reverses the list
+- clear - removes all nodes from the list
+- indexOf - returns the index of the first node with the specified value
 - slice - returns a new list containing the nodes between the specified indices
 - concat - combines two lists into one list
 - toArray - returns an array containing the values of the nodes in the list

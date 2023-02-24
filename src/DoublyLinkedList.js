@@ -209,6 +209,12 @@ export default function DoublyLinkedList(list) {
     head = previous;
   }
 
+  function clear() {
+    head = null;
+    tail = null;
+    length = 0;
+  }
+
   function slice(start, end) {
     var list = new DoublyLinkedList();
     var current = getNode(start);
