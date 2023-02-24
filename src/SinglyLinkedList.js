@@ -179,6 +179,12 @@ export default function SinglyLinkedList(list) {
     return current.data;
   }
 
+  function clear() {
+    head = null;
+    tail = null;
+    length = 0;
+  }
+
   function reverse() {
     var current = head;
     var previous = null;
