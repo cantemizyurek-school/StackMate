@@ -1,7 +1,7 @@
 export default function Stack() {
   var list = [];
 
-  return {
+  return Object.freeze({
     add,
     remove,
     peek,
@@ -10,7 +10,7 @@ export default function Stack() {
     clear,
     toArray,
     toString,
-  };
+  });
 
   function add(data) {
     list.push(data);

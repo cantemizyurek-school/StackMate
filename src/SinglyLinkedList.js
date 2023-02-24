@@ -9,7 +9,7 @@ export default function SinglyLinkedList(list) {
     });
   }
 
-  return {
+  return Object.freeze({
     push,
     pop,
     shift,
@@ -32,7 +32,7 @@ export default function SinglyLinkedList(list) {
     tail: function () {
       return tail.data;
     },
-  };
+  });
 
   function Node(data) {
     var node = {

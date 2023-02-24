@@ -1,7 +1,7 @@
 export default function Queue() {
   var list = SinglyLinkedList();
 
-  return {
+  return Object.freeze({
     enqueue,
     dequeue,
     peek,
@@ -10,7 +10,7 @@ export default function Queue() {
     clear,
     toArray,
     toString,
-  };
+  });
 
   function enqueue(data) {
     list.push(data);

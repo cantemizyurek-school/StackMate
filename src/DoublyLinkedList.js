@@ -7,7 +7,7 @@ export default function DoublyLinkedList(list) {
     list.forEach(() => push(item));
   }
 
-  return {
+  return Object.freeze({
     push,
     pop,
     shift,
@@ -19,12 +19,13 @@ export default function DoublyLinkedList(list) {
     reverse,
     slice,
     concat,
+    indexOf,
     toArray,
     toString,
     length: () => length,
     head: () => head.data,
     tail: () => tail.data,
-  };
+  });
 
   function Node(data) {
     var node = {

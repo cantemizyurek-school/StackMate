@@ -11,7 +11,7 @@ export default function BinaryHeap(
     }
   }
 
-  return {
+  return Object.freeze({
     add,
     get,
     size,
@@ -19,7 +19,7 @@ export default function BinaryHeap(
     isEmpty,
     clear,
     merge,
-  };
+  });
 
   function baseScoreFunction(node) {
     return node;
