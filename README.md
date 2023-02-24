@@ -10,9 +10,9 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 
 - Linked List - a data structure that consists of a sequence of nodes, each containing a reference to the next node in the sequence.
 
-##Features
+## Features
 
-###Singly Linked List And Doubly Linked List
+### Singly Linked List And Doubly Linked List
 
 - push - adds a node to the end of the list
 - pop - removes a node from the end of the list
@@ -31,7 +31,7 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 - head - returns the first node in the list
 - tail - returns the last node in the list
 
-####Example
+#### Example
 
 ```javascript
 import { SinglyLinkedList } from "stack-mate";
