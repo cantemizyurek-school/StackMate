@@ -1,6 +1,6 @@
 {
   "name": "stackedmate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "stacked mate is a simple data structures libary in javascript",
   "main": "index.js",
   "scripts": {
