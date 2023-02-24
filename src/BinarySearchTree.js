@@ -124,16 +124,68 @@ export default function BinarySearchTree() {
     return string;
   }
 
-  function remove(data) {}
+  function remove(data) {
+    if (!root) {
+      return;
+    }
+
+    var current = root;
+    var parent = null;
+
+    while (current) {
+      if (data === current.data) {
+        break;
+      }
+
+      if (data < current.data) {
+        parent = current;
+        current = current.left;
+      } else if (data > current.data) {
+        parent = current;
+        current = current.right;
+      }
+    }
+
+    if (!current) {
+      return;
+    }
+
+    if (!current.left && !current.right) {
+      if (!parent) {
+        root = null;
+      } else if (parent.left === current) {
+        parent.left = null;
+      } else {
+        parent.right = null;
+      }
+    } else if (current.left && current.right) {
+      var successor = current.right;
+      var successorParent = current;
+
+      while (successor.left) {
+        successorParent = successor;
+        successor = successor.left;
+      }
+
+      if (successorParent.left === successor) {
+        successorParent.left = successor.right;
+      } else {
+        successorParent.right = successor.right;
+      }
+
+      current.data = successor.data;
+    } else {
+      var child = current.left ? current.left : current.right;
+
+      if (!parent) {
+        root = child;
+      } else if (parent.left === current) {
+        parent.left = child;
+      } else {
+        parent.right = child;
+      }
+    }
+
+    length--;
+  }
 }
-
-//test
-var bst = BinarySearchTree();
-
-bst.insert(5);
-bst.insert(3);
-bst.insert(7);
-bst.insert(1);
-bst.insert(4);
-
-bst.remove(3);
