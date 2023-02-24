@@ -136,11 +136,23 @@ export default function Tree() {
     return node;
   }
 
-  function toArray(node) {
+  function toArray(node, type = "breadth", position = "pre") {
     var array = [];
-    traverseDepthFirst(node, (node) => {
-      array.push(node);
-    });
+
+    if (type.toLowerCase() === "breadth") {
+      traverseBreadthFirst(node, (node) => {
+        array.push(node.data);
+      });
+    } else {
+      traverseDepthFirst(
+        node,
+        (node) => {
+          array.push(node.data);
+        },
+        position
+      );
+    }
+
     return array;
   }
 
