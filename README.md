@@ -158,3 +158,21 @@ heap.remove(); // 7
 - toArray - returns an array containing the values of the nodes in the tree
 - toString - returns a string containing the values of the nodes in the tree
 - length - returns the number of nodes in the tree
+
+#### Example
+
+```javascript
+import { Tree } from "stack-mate";
+
+const tree = new Tree();
+
+var node1 = tree.add(1);
+var node2 = tree.add(2);
+
+var node3 = tree.add(3, node2);
+var node4 = tree.add(4, node2);
+
+// 1
+// 2
+// 3 4
+```
