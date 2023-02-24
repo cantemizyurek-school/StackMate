@@ -1,12 +1,10 @@
-export default function SinglyLinkedList(list) {
+export default function DoublyLinkedList(list) {
   var head = null;
   var tail = null;
   var length = 0;
 
   if (list) {
-    list.forEach(function (item) {
-      push(item);
-    });
+    list.forEach(() => push(item));
   }
 
   return {
@@ -23,21 +21,16 @@ export default function SinglyLinkedList(list) {
     concat,
     toArray,
     toString,
-    length: function () {
-      return length;
-    },
-    head: function () {
-      return head;
-    },
-    tail: function () {
-      return tail;
-    },
+    length: () => length,
+    head: () => head,
+    tail: () => tail,
   };
 
   function Node(data) {
     var node = {
       data: data,
       next: null,
+      prev: null,
     };
     return node;
   }
@@ -49,6 +42,7 @@ export default function SinglyLinkedList(list) {
       tail = node;
     } else {
       tail.next = node;
+      node.prev = tail;
       tail = node;
     }
     length++;
@@ -58,15 +52,10 @@ export default function SinglyLinkedList(list) {
     if (!head) {
       return null;
     }
-    var current = head;
-    var previous = null;
-    while (current.next) {
-      previous = current;
-      current = current.next;
-    }
-    if (previous) {
-      previous.next = null;
-      tail = previous;
+    var current = tail;
+    if (current.prev) {
+      current.prev.next = null;
+      tail = current.prev;
     } else {
       head = null;
       tail = null;
@@ -83,6 +72,8 @@ export default function SinglyLinkedList(list) {
     head = current.next;
     if (!head) {
       tail = null;
+    } else {
+      head.prev = null;
     }
     length--;
     return current.data;
@@ -94,6 +85,7 @@ export default function SinglyLinkedList(list) {
       head = node;
       tail = node;
     } else {
+      head.prev = node;
       node.next = head;
       head = node;
     }
@@ -101,26 +93,28 @@ export default function SinglyLinkedList(list) {
   }
 
   function getNode(index) {
+    index = getNegativeIndex(index);
     if (index >= length) {
       return null;
     }
 
-    index = getNegativeIndex(index);
-
-    var current = head;
-    for (let i = 0; i < index; i++) {
-      current = current.next;
+    if (index < length / 2) {
+      var current = head;
+      for (let i = 0; i < index; i++) {
+        current = current.next;
+      }
+    } else {
+      var current = tail;
+      for (let i = length - 1; i > index; i--) {
+        current = current.prev;
+      }
     }
-
     return current;
   }
 
   function get(index) {
     var node = getNode(index);
-    if (node) {
-      return node.data;
-    }
-    return null;
+    return node ? node.data : null;
   }
 
   function set(index, data) {
@@ -151,8 +145,11 @@ export default function SinglyLinkedList(list) {
 
     var node = Node(data);
     var previous = getNode(index - 1);
-    node.next = previous.next;
+    var next = previous.next;
     previous.next = node;
+    node.prev = previous;
+    node.next = next;
+    next.prev = node;
     length++;
     return true;
   }
@@ -172,42 +169,47 @@ export default function SinglyLinkedList(list) {
       return pop();
     }
 
-    var previous = getNode(index - 1);
-    var current = previous.next;
-    previous.next = current.next;
+    var current = getNode(index);
+    var previous = current.prev;
+    var next = current.next;
+    previous.next = next;
+    next.prev = previous;
     length--;
+
+    current.prev = null;
+    current.next = null;
+
     return current.data;
+  }
+
+  function indexOf(data) {
+    var current = head;
+    for (let i = 0; i < length; i++) {
+      if (current.data === data) {
+        return i;
+      }
+      current = current.next;
+    }
+    return -1;
   }
 
   function reverse() {
     var current = head;
     var previous = null;
     var next = null;
-
     while (current) {
       next = current.next;
       current.next = previous;
+      current.prev = next;
       previous = current;
       current = next;
     }
-
     tail = head;
     head = previous;
   }
 
-  function slice(start = 0, end = length) {
-    start = getNegativeIndex(start);
-    end = getNegativeIndex(end);
-
-    if (start > end) {
-      return null;
-    }
-
-    if (start === end) {
-      return null;
-    }
-
-    var list = SinglyLinkedList();
+  function slice(start, end) {
+    var list = new DoublyLinkedList();
     var current = getNode(start);
     for (let i = start; i < end; i++) {
       list.push(current.data);
@@ -218,10 +220,7 @@ export default function SinglyLinkedList(list) {
 
   function concat(list) {
     if (Array.isArray(list)) {
-      for (let i = 0; i < list.length; i++) {
-        push(list[i]);
-      }
-
+      list.forEach((item) => push(item));
       return true;
     }
 
@@ -229,7 +228,7 @@ export default function SinglyLinkedList(list) {
       return false;
     }
 
-    var current = list.head();
+    var current = list.head;
     while (current) {
       push(current.data);
       current = current.next;
