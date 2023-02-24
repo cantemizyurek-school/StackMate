@@ -234,3 +234,43 @@ tree.traverseDepthFirst((node) => console.log(node.value), "post-order");
 // 3
 // 1
 ```
+
+### Graph
+
+- addVertex - adds a vertex to the graph
+- addEdge - adds an edge to the graph
+- removeVertex - removes a vertex from the graph
+- removeEdge - removes an edge from the graph
+- getVertex - returns the vertex with the specified value
+- getEdge - returns the edge with the specified value
+- traverseBreadthFirst - traverses the graph in breadth-first order
+- traverseDepthFirst - traverses the graph in depth-first order
+- depthFirstSearch - performs a depth-first search on the graph
+- dijkstra - performs a Dijkstra's algorithm on the graph
+
+#### Example
+
+```javascript
+import { Graph } from "stack-mate";
+
+const graph = new Graph();
+
+graph.addNode("A");
+graph.addNode("B");
+graph.addNode("C");
+graph.addNode("D");
+graph.addNode("E");
+graph.addNode("F");
+
+graph.addEdge(graph.getNode("A"), graph.getNode("B"), 7);
+graph.addEdge(graph.getNode("A"), graph.getNode("C"), 9);
+graph.addEdge(graph.getNode("A"), graph.getNode("F"), 14);
+graph.addEdge(graph.getNode("B"), graph.getNode("C"), 10);
+graph.addEdge(graph.getNode("B"), graph.getNode("D"), 15);
+graph.addEdge(graph.getNode("C"), graph.getNode("D"), 11);
+graph.addEdge(graph.getNode("C"), graph.getNode("F"), 2);
+graph.addEdge(graph.getNode("D"), graph.getNode("E"), 6);
+graph.addEdge(graph.getNode("E"), graph.getNode("F"), 9);
+
+console.log(graph.dijkstra(graph.getNode("A"), graph.getNode("E"))); // [ 'A', 'C', 'F', 'E' ]
+```
