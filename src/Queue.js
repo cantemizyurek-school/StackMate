@@ -1,5 +1,3 @@
-import SinglyLinkedList from "./SinglyLinkedList.js";
-
 export default function Queue() {
   var list = SinglyLinkedList();
 
