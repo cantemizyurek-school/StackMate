@@ -22,8 +22,8 @@ export default function DoublyLinkedList(list) {
     toArray,
     toString,
     length: () => length,
-    head: () => head,
-    tail: () => tail,
+    head: () => head.data,
+    tail: () => tail.data,
   };
 
   function Node(data) {

@@ -27,10 +27,10 @@ export default function SinglyLinkedList(list) {
       return length;
     },
     head: function () {
-      return head;
+      return head.data;
     },
     tail: function () {
-      return tail;
+      return tail.data;
     },
   };
 
