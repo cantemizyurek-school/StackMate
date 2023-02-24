@@ -52,3 +52,30 @@ list.insert(1, 5);
 
 list.remove(1); // 5
 ```
+
+### Queue
+
+- enqueue - adds an element to the end of the queue
+- dequeue - removes an element from the beginning of the queue
+- peek - returns the element at the beginning of the queue
+- length - returns the number of elements in the queue
+- isEmpty - returns true if the queue is empty, false otherwise
+- clear - removes all elements from the queue
+- toArray - returns an array containing the elements in the queue
+- toString - returns a string containing the elements in the queue
+
+#### Example
+
+```javascript
+import { Queue } from "stack-mate";
+
+const queue = new Queue();
+
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+
+queue.dequeue(); // 1
+queue.dequeue(); // 2
+queue.dequeue(); // 3
+```
