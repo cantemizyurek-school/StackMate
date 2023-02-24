@@ -2,6 +2,7 @@ import Queue from "./Queue.js";
 
 export default function Tree() {
   var root = null;
+  var length = 0;
 
   return Object.freeze({
     getChildren,
@@ -60,6 +61,8 @@ export default function Tree() {
   }
 
   function add(data, parent = root) {
+    length += 1;
+
     if (!parent) {
       root = Node(data);
       return root;
@@ -72,6 +75,7 @@ export default function Tree() {
   }
 
   function remove(node) {
+    length -= 1;
     if (!node.parent) {
       root = null;
       return;
