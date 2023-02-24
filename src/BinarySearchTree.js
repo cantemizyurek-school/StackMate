@@ -7,13 +7,17 @@ export default function BinarySearchTree() {
   return Object.freeze({
     insert,
     remove,
+    get,
+    getDepth,
+    getMin,
+    getMax,
     contains,
     length: () => length,
     toArray,
     toString,
     root: () => root,
-    breadthFirstSearch,
-    depthFirstSearch,
+    traverseBreadthFirst,
+    traverseDepthFirst,
   });
 
   function Node(data) {
@@ -56,7 +60,58 @@ export default function BinarySearchTree() {
     length++;
   }
 
-  function breadthFirstSearch(callback) {
+  function get(data) {
+    var info = getAllInfo(data);
+    return info ? info.node : null;
+  }
+
+  function getDepth(data) {
+    var info = getAllInfo(data);
+    return info ? info.depth : null;
+  }
+
+  function getAllInfo(data) {
+    var current = root;
+    var depth = 0;
+
+    while (current !== null) {
+      if (data === current.data) {
+        return { node: current, depth: depth };
+      }
+
+      if (data < current.data) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+
+      depth++;
+    }
+
+    return null;
+  }
+
+  function getMin() {
+    var current = root;
+
+    while (current.left) {
+      current = current.left;
+    }
+
+    return current.data;
+  }
+
+  function getMax() {
+    var current = root;
+
+    while (current.right) {
+      current = current.right;
+    }
+
+    return current.data;
+  }
+
+  function traverseBreadthFirst(callback) {
     var queue = Queue();
     var current = root;
 
@@ -72,7 +127,7 @@ export default function BinarySearchTree() {
     }
   }
 
-  function depthFirstSearch(callback, order = "post") {
+  function traverseDepthFirst(callback, order = "post") {
     var current = root;
 
     function helper(node) {
@@ -103,7 +158,7 @@ export default function BinarySearchTree() {
   function contains(data) {
     var contains = false;
 
-    breadthFirstSearch((node) => {
+    traverseBreadthFirst((node) => {
       if (node.data === data) {
         contains = true;
       }
@@ -114,13 +169,13 @@ export default function BinarySearchTree() {
 
   function toArray() {
     var array = [];
-    depthFirstSearch((node) => array.push(node.data), "in");
+    traverseDepthFirst((node) => array.push(node.data), "in");
     return array;
   }
 
   function toString() {
     var string = "";
-    depthFirstSearch((node) => (string += node.data + " "), "in");
+    traverseDepthFirst((node) => (string += node.data + " "), "in");
     return string;
   }
 
