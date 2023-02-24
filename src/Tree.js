@@ -17,6 +17,9 @@ export default function Tree() {
     traverseDepthFirst,
     toArray,
     toString,
+    length: function () {
+      return length;
+    },
   });
 
   function Node(data) {
