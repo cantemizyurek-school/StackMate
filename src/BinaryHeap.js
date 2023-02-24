@@ -17,6 +17,8 @@ export default function BinaryHeap(
     size,
     peek,
     isEmpty,
+    clear,
+    merge,
   };
 
   function baseScoreFunction(node) {
@@ -100,6 +102,16 @@ export default function BinaryHeap(
 
   function isEmpty() {
     return heap.length === 0;
+  }
+
+  function clear() {
+    heap = [];
+  }
+
+  function merge(otherHeap) {
+    for (var i = 0; i < otherHeap.size(); i++) {
+      add(otherHeap.get(i));
+    }
   }
 
   function swap(i, j) {

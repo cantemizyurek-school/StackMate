@@ -4,11 +4,7 @@ export default function BinaryMaxHeap(List, scoreFunction = baseScoreFunction) {
   var heap = BinaryHeap(List, scoreFunction, baseCompareFunction);
 
   return {
-    add: heap.add,
-    get: heap.get,
-    size: heap.size,
-    peek: heap.peek,
-    isEmpty: heap.isEmpty,
+    ...heap,
   };
 
   function baseScoreFunction(node) {

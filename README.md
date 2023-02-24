@@ -11,6 +11,7 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 - Linked List - a data structure that consists of a sequence of nodes, each containing a reference to the next node in the sequence.
 - Queue - First-In-First-Out (FIFO) structure that allows you to store and retrieve elements in a specific order.
 - Stack - Last-In-First-Out (LIFO) structure that allows you to store and retrieve elements in a specific order.
+- BinartHeap - a data structure that allows you to store elements in a specific order. The order is determined by the priority of the elements.
 
 ## Features
 
@@ -107,4 +108,41 @@ stack.add(3);
 stack.remove(); // 3
 stack.remove(); // 2
 stack.remove(); // 1
+```
+
+### Binary Heap
+
+- add - adds an element to the heap
+- remove - removes an element from the heap
+- peek - returns the element at the top of the heap
+- size - returns the number of elements in the heap
+- isEmpty - returns true if the heap is empty, false otherwise
+- clear - removes all elements from the heap
+- merge - merges two heaps into one heap
+
+#### Example
+
+```javascript
+import { BinaryHeap } from "stack-mate";
+
+const heap = new BinaryHeap(
+  [7, 2, 4],
+  (node) => node,
+  (a, b) => a - b
+);
+
+heap.add(1);
+heap.add(3);
+heap.add(5);
+
+heap.remove(); // 1
+heap.remove(); // 2
+heap.remove(); // 3
+heap.remove(); // 4
+heap.remove(); // 5
+heap.remove(); // 7
+```
+
+```
+
 ```
