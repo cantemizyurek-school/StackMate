@@ -146,6 +146,11 @@ export default function Tree() {
   function toArray(node, type = "breadth", position = "pre") {
     var array = [];
 
+    if (!node) return array;
+
+    if (length === 0) return array;
+    if (length === 1) return array.push(node.data);
+
     if (type.toLowerCase() === "breadth") {
       traverseBreadthFirst(node, (node) => {
         array.push(node.data);

@@ -15,4 +15,5 @@ export {
   BinaryHeap,
   BinaryMinHeap,
   BinaryMaxHeap,
+  Tree,
 };
