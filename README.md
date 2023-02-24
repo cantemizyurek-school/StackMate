@@ -12,6 +12,7 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 - Queue - First-In-First-Out (FIFO) structure that allows you to store and retrieve elements in a specific order.
 - Stack - Last-In-First-Out (LIFO) structure that allows you to store and retrieve elements in a specific order.
 - BinartHeap - a data structure that allows you to store elements in a specific order. The order is determined by the priority of the elements.
+- Tree - a data structure that consists of a sequence of nodes, each containing a reference to the parent node and the child nodes.
 
 ## Features
 
@@ -142,3 +143,18 @@ heap.remove(); // 4
 heap.remove(); // 5
 heap.remove(); // 7
 ```
+
+### Tree
+
+- getChildren - returns an array containing the child nodes of the specified node
+- getParent - returns the parent node of the specified node
+- getDepth - returns the depth of the specified node
+- getRoot - returns the root node of the tree
+- add - adds a node to the tree (parent node can be specified)
+- remove - removes a node from the tree (child nodes are also removed)
+- removeChildren - removes the child nodes of the specified node
+- traverseBreadthFirst - traverses the tree in breadth-first order
+- traverseDepthFirst - traverses the tree in depth-first order (pre-order, post-order)
+- toArray - returns an array containing the values of the nodes in the tree
+- toString - returns a string containing the values of the nodes in the tree
+- length - returns the number of nodes in the tree
