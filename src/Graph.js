@@ -47,7 +47,7 @@ export default function Graph() {
     }
   }
 
-  function addEdge(node1, node2, weight, directed) {
+  function addEdge(node1, node2, weight, directed = false) {
     var edge = Edge(node1, node2, weight, directed);
 
     node1.edges.push(edge);
