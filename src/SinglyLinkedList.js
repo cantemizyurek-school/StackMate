@@ -23,6 +23,7 @@ export default function SinglyLinkedList(list) {
     concat,
     toArray,
     toString,
+    clear,
     length: function () {
       return length;
     },
