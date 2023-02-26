@@ -47,7 +47,7 @@ export default function Graph() {
     }
   }
 
-  function addEdge(node1, node2, weight, directed = false) {
+  function addEdge(node1, node2, weight = 0.0001, directed = false) {
     var edge = Edge(node1, node2, weight, directed);
 
     node1.edges.push(edge);
@@ -143,7 +143,12 @@ export default function Graph() {
     }
   }
 
-  function dijkstra(node1, node2) {
+  function dijkstra(
+    node1,
+    node2,
+    weightFn = (edge) => edge.weight,
+    compareFunction = (a, b) => a - b
+  ) {
     var visited = new Set();
     var heap = BinaryMinHeap([], (a) => a.distance);
     var distances = new Map();
@@ -162,9 +167,11 @@ export default function Graph() {
 
       node.edges.forEach((edge) => {
         var neighbor = edge.node1 === node ? edge.node2 : edge.node1;
-        var distance = distances.get(node) + edge.weight;
+        var distance = distances.get(node) + weightFn(edge);
 
-        if (!distances.has(neighbor) || distance < distances.get(neighbor)) {
+        var isNewDistance = compareFunction(distance, distances.get(neighbor));
+
+        if (!distances.has(neighbor) || isNewDistance < 0) {
           distances.set(neighbor, distance);
           previous.set(neighbor, node);
           heap.add({ node: neighbor, distance: distance });
