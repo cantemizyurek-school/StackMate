@@ -43,7 +43,7 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 ```javascript
 import { SinglyLinkedList } from "stack-mate";
 
-const list = new SinglyLinkedList();
+const list = SinglyLinkedList();
 
 list.push(1);
 list.push(2);
@@ -76,7 +76,7 @@ list.remove(1); // 5
 ```javascript
 import { Queue } from "stack-mate";
 
-const queue = new Queue();
+const queue = Queue();
 
 queue.enqueue(1);
 queue.enqueue(2);
@@ -103,7 +103,7 @@ queue.dequeue(); // 3
 ```javascript
 import { Stack } from "stack-mate";
 
-const stack = new Stack();
+const stack = Stack();
 
 stack.add(1);
 stack.add(2);
@@ -129,7 +129,7 @@ stack.remove(); // 1
 ```javascript
 import { BinaryHeap } from "stack-mate";
 
-const heap = new BinaryHeap(
+const heap = BinaryHeap(
   [7, 2, 4],
   (node) => node,
   (a, b) => a - b
@@ -167,7 +167,7 @@ heap.remove(); // 7
 ```javascript
 import { Tree } from "stack-mate";
 
-const tree = new Tree();
+const tree = Tree();
 
 var node1 = tree.add(1);
 var node2 = tree.add(2);
@@ -200,7 +200,7 @@ var node4 = tree.add(4, node2);
 ```javascript
 import { BinarySearchTree } from "stack-mate";
 
-const tree = new BinarySearchTree();
+const tree = BinarySearchTree();
 
 tree.add(1);
 tree.add(2);
@@ -253,7 +253,7 @@ tree.traverseDepthFirst((node) => console.log(node.value), "post-order");
 ```javascript
 import { Graph } from "stack-mate";
 
-const graph = new Graph();
+const graph = Graph();
 
 graph.addNode("A");
 graph.addNode("B");
