@@ -10,7 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/cantemizyurek-school/StackMate.git"
   },
-  "keywords": [],
+  "keywords": [
+    "stack",
+    "queue",
+    "linkedlist",
+    "datastructures",
+    "data",
+    "structures"
+  ],
   "author": "Can Temizyurek",
   "license": "MIT",
   "bugs": {
