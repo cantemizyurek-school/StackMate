@@ -14,6 +14,8 @@ Stacked Mate is a lightweight and easy-to-use data structures library that provi
 - BinartHeap - a data structure that allows you to store elements in a specific order. The order is determined by the priority of the elements.
 - Tree - a data structure that consists of a sequence of nodes, each containing a reference to the parent node and the child nodes.
 - Binary Search Tree - a data structure that consists of a sequence of nodes, each containing a reference to the parent node and the child nodes. The nodes are ordered in a specific way.
+- Graph - a data structure that consists of a sequence of nodes, each containing a reference to the adjacent nodes.
+- Trie - a data structure that consists of a sequence of nodes, each containing a reference to the child nodes. The nodes are ordered in a specific way.
 
 ## Features
 
@@ -273,4 +275,46 @@ graph.addEdge(graph.getNode("D"), graph.getNode("E"), 6);
 graph.addEdge(graph.getNode("E"), graph.getNode("F"), 9);
 
 console.log(graph.dijkstra(graph.getNode("A"), graph.getNode("E"))); // [ 'A', 'C', 'F', 'E' ]
+```
+
+### Trie
+
+- add - adds a word to the trie
+- remove - removes a word from the trie
+- contains - returns true if the trie contains the specified word, false otherwise
+- getWords - returns an array containing all the words in the trie
+- getWordsWithPrefix - returns an array containing all the words in the trie with the specified prefix
+- toArray - returns an array containing the words in the trie
+- toString - returns a string containing the words in the trie
+
+#### Example
+
+```javascript
+import { Trie } from "stack-mate";
+
+const trie = Trie();
+
+trie.add("cat");
+trie.add("car");
+trie.add("cart");
+trie.add("dog");
+
+trie.contains("cat"); // true
+trie.contains("dog"); // true
+trie.contains("car"); // true
+trie.contains("cart"); // true
+trie.contains("c"); // false
+
+trie.getWords(); // [ 'cat', 'car', 'cart', 'dog' ]
+trie.getWordsWithPrefix("ca"); // [ 'cat', 'car', 'cart' ]
+
+trie.remove("cat");
+trie.remove("car");
+trie.remove("cart");
+
+trie.contains("cat"); // false
+trie.contains("car"); // false
+trie.contains("cart"); // false
+
+trie.getWords(); // [ 'dog' ]
 ```

@@ -8,6 +8,7 @@ import BinaryMaxHeap from "./src/BinaryMaxHeap.js";
 import Tree from "./src/Tree.js";
 import BinarySearchTree from "./src/BinarySearchTree.js";
 import Graph from "./src/Graph.js";
+import Trie from "./src/Trie.js";
 
 export {
   SinglyLinkedList,
@@ -20,4 +21,5 @@ export {
   Tree,
   BinarySearchTree,
   Graph,
+  Trie,
 };
