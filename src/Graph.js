@@ -134,7 +134,7 @@ export default function Graph() {
     queue.enqueue(node);
 
     while (!queue.isEmpty()) {
-      var node = queue.dequeue();
+      node = queue.dequeue();
       callback(node);
       node.edges.forEach((edge) => {
         var neighbor = edge.node1 === node ? edge.node2 : edge.node1;
