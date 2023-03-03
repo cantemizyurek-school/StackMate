@@ -100,17 +100,20 @@ export default function DoublyLinkedList(list) {
       return null;
     }
 
+    var current = null;
+
     if (index < length / 2) {
-      var current = head;
+      current = head;
       for (let i = 0; i < index; i++) {
         current = current.next;
       }
     } else {
-      var current = tail;
+      current = tail;
       for (let i = length - 1; i > index; i--) {
         current = current.prev;
       }
     }
+
     return current;
   }
 

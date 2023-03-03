@@ -180,7 +180,7 @@ export default function Graph() {
     }
 
     var path = [];
-    var node = node2;
+    node = node2;
     while (node) {
       path.push(node.data);
       node = previous.get(node);
